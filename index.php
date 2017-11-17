@@ -15,24 +15,12 @@ if (isset($_POST['hidden'])){
     $num = mysqli_num_rows ($result);
     
     if($num == 1){
-        echo "ingelogd"; 
-        echo "<link method='POST' href='welcome.php'>";
+        $extra='welcome.php';
+        header("Location: $extra");
     }else{
     echo "wrong";
 }
 }
-
-
-
-
-//if (isset($_REQUEST['userName'])) {   //isset gebruiken om te kijken of een variabele bestaat en $_REQUEST om de data te verzamelen. $_SESSION om de data naar meerdere pagina's te krijgen.
-//    $inloggen = new mysqli('localhost', 'root', '', 'login');
-//    $username = $_REQUEST ['userName'];
-//    $password = $_REQUEST ['pSd'];
-//    $sql = "INSERT INTO `loginsystem`(`uname`,`psd`) VALUES ('$username','$password')";
-//    $inloggen->query($sql);
-//}
-
 
 ?>
 
@@ -40,13 +28,6 @@ if (isset($_POST['hidden'])){
     <head>
         <meta charset="UTF-8">
         <title>Login System</title>
-<!--        <script>
-            function checkdouble() {
-                x = document.getElementById("uName").selectedIndex;
-                if (x === x)
-                    alert("Please choose a different username");
-                }
-        </script>-->
 
     </head>
     <body>
