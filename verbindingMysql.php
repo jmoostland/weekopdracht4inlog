@@ -9,4 +9,6 @@ $password = '';
 $inloggen = new mysqli('localhost', 'root', '', 'login');
 return $inloggen;
 }
+
+
 ?>
