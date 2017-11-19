@@ -73,9 +73,9 @@ if (mysqli_query($inloggen, "SELECT * from loginsystem WHERE uname = $user_name"
 
         <form action="registreren.php" method="POST" href="welcome.php">
             <p><strong>Create an Account</strong></p><br>
-            <br><input type="text" id= uName name="userName" placeholder="Username"><br>
+            <br><input type="text" id= uName name="userName" placeholder="Username" required><br>
             <!--<br><input type="email" name="email" placeholder="Email"><br>-->
-            <br><input type="text" name="pSd" placeholder="Password"><br><br>
+            <br><input type="text" name="pSd" placeholder="Password" required><br><br>
             <input type="hidden" name="hidden">
             <input type="submit" value="Sign up"><br><br>
 

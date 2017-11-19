@@ -3,7 +3,6 @@ session_start();
 
 echo "Welcome on this page " . $_SESSION['userName'];
 echo '<br>';
-
 ?>
 <html>
     <head>
@@ -23,6 +22,13 @@ echo '<br>';
                 margin-left: 450px;
             }
         </style>   
+        <script>
+
+            document.cookie = "username=Jeanine; Expires=Mon, 22 Oct 2018 08:00:00 UTC;"; domain=localhost;
+            alert(document.cookie);
+
+
+        </script>
 
     </head>
     <body>
