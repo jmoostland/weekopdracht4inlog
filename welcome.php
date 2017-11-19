@@ -1,4 +1,10 @@
+<?php
+session_start();
 
+echo "Welcome on this page " . $_SESSION['userName'];
+echo '<br>';
+
+?>
 <html>
     <head>
         <style>
@@ -22,13 +28,12 @@
     <body>
 
 
-        Welcome on this page
+        
 
         <a href="index.php">Log out</a>       
     </body>
 
 </html>
-
 
 
 

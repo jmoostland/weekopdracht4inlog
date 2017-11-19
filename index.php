@@ -2,6 +2,7 @@
 
 <?php
 
+session_start();
 //require 'verbindingMysql.php';
 
 
@@ -14,9 +15,14 @@ if (isset($_POST['hidden'])) {
     $num = mysqli_num_rows($result);
 
     if ($num == 1) {
-        $extra = 'welcome.php';
-        header("Location: $extra");
-    } else {
+        $sql2 = "SELECT * FROM `loginsystem` WHERE `uname`='" . $user_name . "'AND `psd`='" . $password . "'";
+        $result1 = $inloggen->query($sql2);
+        $fetch = mysqli_fetch_assoc($result2);
+        
+        $_SESSION['userName'] = $user_name;
+        $_SESSION['id'] = $fetch['id'];
+        header("Location: welcome.php");
+    } else { //wanneer het password of username verkeerd is ga je naar registreren
         $extra1 = 'registreren.php';
         header("Location: $extra1");
     }
@@ -54,14 +60,14 @@ if (isset($_POST['hidden'])) {
 
         <form action="index.php" method="POST">
 
-            Username <br><input type="text" id= uName name="userName"><br>
-            Password <br><input type="password" name="pSd"><br><br>
+            <br><input type="text" id= uName name="userName" placeholder="Username"><br>
+            <br><input type="password" name="pSd" placeholder="Password"><br><br>
             <input type="hidden" name="hidden">
             <input type="submit" value="Login"><br><br>
-            <a> If you are a registered member please log in.<br> 
+            <a>If you are a registered member please log in.<br> 
                 If you are not registered yet please sign up.</a><br>
-           
-             <a href="registreren.php">Sign up here</a>
+
+            <a href="registreren.php"><strong>Sign up here</strong></a>
 
 
         </form>  
