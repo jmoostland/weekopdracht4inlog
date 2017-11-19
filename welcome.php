@@ -27,10 +27,7 @@ echo '<br>';
     </head>
     <body>
 
-
-        
-
-        <a href="index.php">Log out</a>       
+        <a href="logout.php">Log out</a>       
     </body>
 
 </html>
