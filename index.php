@@ -1,7 +1,6 @@
 
 
 <?php
-
 session_start();
 //require 'verbindingMysql.php';
 
@@ -18,14 +17,17 @@ if (isset($_POST['hidden'])) {
         $sql2 = "SELECT * FROM `loginsystem` WHERE `uname`='" . $user_name . "'AND `psd`='" . $password . "'";
         $result1 = $inloggen->query($sql2);
         $fetch = mysqli_fetch_assoc($result2);
-        
+
         $_SESSION['userName'] = $user_name;
         $_SESSION['id'] = $fetch['id'];
         header("Location: welcome.php");
-    } else { //wanneer het password of username verkeerd is ga je naar registreren
-        $extra1 = 'registreren.php';
-        header("Location: $extra1");
-    }
+    } else {
+        $num !== 1;
+        echo 'Your Username or Password is invalid.<br> Please try again.<br>';
+        echo '<a>If you are a registered member please log in.<br>
+        If you are not registered yet please sign up.</a><br>
+        <a href = "registreren.php"><strong>Sign up here</strong></a>';
+    } 
 }
 ?>
 

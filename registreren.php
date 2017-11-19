@@ -41,7 +41,7 @@ if (isset($_REQUEST['userName'])) {
         <form action="registreren.php" method="POST" href="welcome.php">
             <p><strong>Create an Account</strong></p><br>
             <br><input type="text" id= uName name="userName" placeholder="Username"><br>
-            <br><input type="email" name="email" placeholder="Email"><br>
+            <!--<br><input type="email" name="email" placeholder="Email"><br>-->
             <br><input type="text" name="pSd" placeholder="Password"><br><br>
             <input type="submit" value="Sign up"><br><br>
 
